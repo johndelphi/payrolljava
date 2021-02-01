@@ -6,11 +6,7 @@ public class  Payroll {
       private double hours;
       private double Payrate;
       // field constructor
-     public Payroll( ){
-         String name;
-         String id;
-         
-      }
+    
       /*
       * The set Name method which accepts an argument
       *which is stored in the naem field 
@@ -18,7 +14,7 @@ public class  Payroll {
     
 public void setName(String name){
     
-    name =Name;
+    this.Name = name;
 }
 /*
  * The set Name method which accepts an argument which is stored in the payroll private field
@@ -35,7 +31,7 @@ Id=identity;
  * @ parameter for payrate in the payroll class
  */
 public void setPayrate(double hourlypayrate){
-    hourlypayrate = Payrate;
+    this.Payrate=hourlypayrate;
 }
 /*
  * The set Name method which accepts an argument which is stored in the hours worked in the payroll,
@@ -43,8 +39,8 @@ public void setPayrate(double hourlypayrate){
  * 
  * @ parameter payrate in the payroll class
  */
-public void hoursworked(double AmountOfHRS){
-    AmountOfHRS =hours;
+public void sethoursworked(double AmountOfHRS){
+this.hours=AmountOfHRS;
 }
 
 /*
@@ -52,7 +48,7 @@ public void hoursworked(double AmountOfHRS){
 *Stored in 
 *
 * */
-public String getIIdnumber(){
+public String getIdnumber(){
 
     return Id;
 }
@@ -81,8 +77,10 @@ public double getHours(){
     Payroll employee1 = new Payroll();
     employee1.setIdNumber("re");
      employee1.setName("john");
-     employee1.setPayrate(10.1);
-    System.out.println(employee1.Name +"\n"+ employee1.Id + employee1.Payrate);
+     employee1.setPayrate(200);
+     employee1.sethoursworked(34);
+    System.out.println("employee Name: "+ employee1.Name +"\n"+ "empoyee id:" + employee1.Id);
+     System.out.println("employee payrate: "+employee1.Payrate +"\n"+ employee1.hours);
     
     
      }
