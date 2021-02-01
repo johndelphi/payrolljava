@@ -1,3 +1,4 @@
+import java.security.InvalidAlgorithmParameterException;
 import java.util.jar.Attributes.Name;
 
 public class  Payroll {
@@ -13,8 +14,13 @@ public class  Payroll {
       *@ parameter for Id  in the payroll class */
     
 public void setName(String name){
-    
+if (name==null)  {
+        System.out.println("name can not be null "); 
+        setName(name);
+    }
+    else{
     this.Name = name;
+    }
 }
 /*
  * The set Name method which accepts an argument which is stored in the payroll private field
@@ -40,7 +46,12 @@ public void setPayrate(double hourlypayrate){
  * @ parameter payrate in the payroll class
  */
 public void sethoursworked(double AmountOfHRS){
+    if (AmountOfHRS>84||AmountOfHRS<0)  { 
+        System.out.println("Plaese not that hours should be greater than zero and less than 84");
+        sethoursworked(AmountOfHRS);
+    } else{
 this.hours=AmountOfHRS;
+}
 }
 
 /*
@@ -75,10 +86,10 @@ public double getHours(){
      public static void main(String[] args){
 
     Payroll employee1 = new Payroll();
-    employee1.setIdNumber("re");
-     employee1.setName("john");
+    employee1.setIdNumber("r1");
+    employee1.setName("john");
      employee1.setPayrate(200);
-     employee1.sethoursworked(34);
+     employee1.sethoursworked(40);
     System.out.println("employee Name: "+ employee1.Name +"\n"+ "empoyee id:" + employee1.Id);
      System.out.println("employee payrate: "+employee1.Payrate +"\n"+ employee1.hours);
     
