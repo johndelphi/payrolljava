@@ -2,27 +2,30 @@ import java.util.jar.Attributes.Name;
 
 public class  Payroll {
       private String Name;
-      private int Id;
+      private String Id;
       private double hours;
       private double Payrate;
       // field constructor
-      public Payroll( String name, int id){
-          name=Name;
-          Id=id;
-          
+     public Payroll( ){
+         String name;
+         String id;
+         
       }
       /*
       * The set Name method which accepts an argument
       *which is stored in the naem field 
       *@ parameter for Id  in the payroll class */
+    
 public void setName(String name){
+    
     name =Name;
 }
 /*
  * The set Name method which accepts an argument which is stored in the payroll private field
+
  @ parameter for Id in the payroll class
  */
-public void setIdNumber(int identity){
+public void setIdNumber(String identity){
 Id=identity;
 }
 
@@ -41,7 +44,7 @@ public void setPayrate(double hourlypayrate){
  * @ parameter payrate in the payroll class
  */
 public void hoursworked(double AmountOfHRS){
-    AmountOfHRS=hours;
+    AmountOfHRS =hours;
 }
 
 /*
@@ -49,7 +52,7 @@ public void hoursworked(double AmountOfHRS){
 *Stored in 
 *
 * */
-public int getIIdnumber(){
+public String getIIdnumber(){
 
     return Id;
 }
@@ -73,12 +76,17 @@ public  double getPayRate(){
 public double getHours(){
     return hours;
 }
+     public static void main(String[] args){
 
-/**
- * the getGrossPay computes and returns the amount of gross pay as a double
- */
-     public static void main(String[] args) throws Exception {
-
-        
+    Payroll employee1 = new Payroll();
+    employee1.setIdNumber("re");
+     employee1.setName("john");
+     employee1.setPayrate(10.1);
+    System.out.println(employee1.Name +"\n"+ employee1.Id + employee1.Payrate);
+    
+    
+     }
+     
+     
     }
-}
+     
