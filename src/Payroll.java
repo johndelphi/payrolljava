@@ -14,12 +14,14 @@ public class  Payroll {
       *@ parameter for Id  in the payroll class */
     
 public void setName(String name){
+    System.out.println("please enter your name");
+    Scanner nameSc = new Scanner(System.in);
+name= nameSc.nextLine();
 if (name==null)  {
-        System.out.println("name can not be null "); 
-        setName(name);
-    }
-    else{
+    System.out.println("name can not be null,Please enter your name. ");
+     name=nameSc.nextLine();
     this.Name = name;
+    nameSc.close();
     }
 }
 /*
@@ -31,8 +33,6 @@ public void setIdNumber(String identity){
    Scanner in =new Scanner(System.in);
    System.out.println("Please your Id (the fomat should be letter letter number number number number)");
    identity=in.nextLine();
-    
-
 this.Id=identity;
 in.close();
 }
@@ -52,17 +52,14 @@ public void setPayrate(double hourlypayrate){
  * @ parameter payrate in the payroll class
  */
 public void sethoursworked(double AmountOfHRS){
-    Scanner in =new Scanner(System.in);
-    System.out.println("Please enter the amount of hours worked");
-    AmountOfHRS = in.nextDouble();
-            while(AmountOfHRS>84||AmountOfHRS<0)  { 
-        System.out.println("Please not that hours should be greater than zero and less than 84");
-      AmountOfHRS=in.nextDouble();
-        
     
-this.hours=AmountOfHRS;
-in.close();
-            }
+    System.out.println("Please enter the amount of hours worked");
+       Scanner hoursAmount = new Scanner(System.in);
+       AmountOfHRS = hoursAmount.nextDouble();
+       
+      this.hours = AmountOfHRS;
+       hoursAmount.close();
+            
 }
 /*
 *The getIdNumber method returns the value of the idnumber
@@ -90,7 +87,7 @@ public  double getPayRate(){
  * The getHours worked method gets the number of hours worked from veriable hours and 
  returns it as a double.
  */
-public double getHours(){
+public double getHours() {
     return hours;
 }
      public static void main(String[] args){
@@ -98,10 +95,10 @@ public double getHours(){
     Payroll employee1 = new Payroll();
     employee1.setIdNumber("t2");
     employee1.setName("john");
-     employee1.setPayrate(4);
-     employee1.sethoursworked(3);
+    employee1.setPayrate(10);
+    employee1.sethoursworked(89);
     System.out.println("employee Name: "+ employee1.Name +"\n"+ "empoyee id:" + employee1.Id);
-     System.out.println("employee payrate: "+employee1.Payrate +"\n"+"Amount of hours:"+employee1.hours);
+    System.out.println("employee payrate: "+employee1.Payrate +"\n"+"Amount of hours:"+employee1.hours);
     
     
      }
