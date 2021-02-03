@@ -1,4 +1,5 @@
 import java.security.InvalidAlgorithmParameterException;
+import java.util.Scanner;
 import java.util.jar.Attributes.Name;
 
 public class  Payroll {
@@ -46,14 +47,17 @@ public void setPayrate(double hourlypayrate){
  * @ parameter payrate in the payroll class
  */
 public void sethoursworked(double AmountOfHRS){
-    if (AmountOfHRS>84||AmountOfHRS<0)  { 
-        System.out.println("Plaese not that hours should be greater than zero and less than 84");
-        sethoursworked(AmountOfHRS);
-    } else{
+    Scanner in =new Scanner(System.in);
+    System.out.println("Please enter the amount of hours worked");
+    AmountOfHRS = in.nextDouble();
+            while(AmountOfHRS>84||AmountOfHRS<0)  { 
+        System.out.println("Please not that hours should be greater than zero and less than 84");
+        
+            }
+    
 this.hours=AmountOfHRS;
-}
-}
 
+}
 /*
 *The getIdNumber method returns the value of the idnumber
 *Stored in 
@@ -86,16 +90,14 @@ public double getHours(){
      public static void main(String[] args){
 
     Payroll employee1 = new Payroll();
-    employee1.setIdNumber("r1");
+    employee1.setIdNumber("t2");
     employee1.setName("john");
      employee1.setPayrate(200);
-     employee1.sethoursworked(40);
+     employee1.sethoursworked(0);
     System.out.println("employee Name: "+ employee1.Name +"\n"+ "empoyee id:" + employee1.Id);
-     System.out.println("employee payrate: "+employee1.Payrate +"\n"+ employee1.hours);
+     System.out.println("employee payrate: "+employee1.Payrate +"\n"+"Amount of hours:"+employee1.hours);
     
     
      }
-     
-     
     }
      
