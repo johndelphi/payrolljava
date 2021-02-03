@@ -1,6 +1,5 @@
-import java.security.InvalidAlgorithmParameterException;
 import java.util.Scanner;
-import java.util.jar.Attributes.Name;
+
 
 public class  Payroll {
       private String Name;
@@ -29,7 +28,13 @@ if (name==null)  {
  @ parameter for Id in the payroll class
  */
 public void setIdNumber(String identity){
-Id=identity;
+   Scanner in =new Scanner(System.in);
+   System.out.println("Please your Id (the fomat should be letter letter number number number number)");
+   identity=in.nextLine();
+    
+
+this.Id=identity;
+in.close();
 }
 
 /*
@@ -52,11 +57,12 @@ public void sethoursworked(double AmountOfHRS){
     AmountOfHRS = in.nextDouble();
             while(AmountOfHRS>84||AmountOfHRS<0)  { 
         System.out.println("Please not that hours should be greater than zero and less than 84");
+      AmountOfHRS=in.nextDouble();
         
-            }
     
 this.hours=AmountOfHRS;
-
+in.close();
+            }
 }
 /*
 *The getIdNumber method returns the value of the idnumber
@@ -92,8 +98,8 @@ public double getHours(){
     Payroll employee1 = new Payroll();
     employee1.setIdNumber("t2");
     employee1.setName("john");
-     employee1.setPayrate(200);
-     employee1.sethoursworked(0);
+     employee1.setPayrate(4);
+     employee1.sethoursworked(3);
     System.out.println("employee Name: "+ employee1.Name +"\n"+ "empoyee id:" + employee1.Id);
      System.out.println("employee payrate: "+employee1.Payrate +"\n"+"Amount of hours:"+employee1.hours);
     
